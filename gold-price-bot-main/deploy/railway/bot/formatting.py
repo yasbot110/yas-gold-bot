@@ -49,13 +49,27 @@ def publish_post(state: dict, now_tehran) -> str:
     sell = state.get("sell")
     sell_v = sell["value"] if sell else None
     buy_v = cfg.computed_buy(sell_v)
+    sell_gram = round(sell_v / 4.3318492) if sell_v else 0
+    buy_gram = round(buy_v / 4.3318492) if buy_v else 0
     lines = [
-        "💠 <b>قیمت لحظهای طلای آبشده</b> 💠",
+        "نرخ رسمی طلای آبشده نقد فردایی:",
         "",
-        _price_line("خرید", "🔵", buy_v),
         _price_line("فروش", "🔴", sell_v),
+        _price_line("خرید", "🟢", buy_v),
         "",
-        f"🕒 {escape(format_jalali_datetime(now_tehran))}",
+        _price_line("فروش گرم", "🟣", sell_gram ),
+        _price_line("خرید گرم", "🟡", buy_gram ),
+        "",
+        "⌛اعتبار قیمت : 1 دقیقه",
+        "",
+        "📞تلفن :",
+        "<blockquote>"
+        "<a href='https://t.me/+989391118448'>09391118448</a>\n\n"
+        "<a href='https://t.me/+989151118448'>09151118448</a>\n\n"
+        "<a href='https://t.me/+989357990121'>09357990121</a>\n\n"
+        "<a href='https://t.me/+989031118448'>09031118448</a>"
+        "</blockquote>",
+        "@GoldYas110 | گلد یاس ۱۱۰",
     ]
     return "\n".join(lines)
 
