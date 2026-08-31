@@ -1,1 +1,0 @@
-"""Gold price bot — main application package."""
