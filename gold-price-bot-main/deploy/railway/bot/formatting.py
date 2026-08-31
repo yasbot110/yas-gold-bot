@@ -18,7 +18,7 @@ SUPPORT_LINK = "https://t.me/GoldYas110_Support"   # contact & orders support ch
 # Conversion factor: 1 mesghal (مثقال) = 4.6083 grams (standard for Iranian gold)
 # Note: Some sources use 4.3318492, but the common Iranian market standard is ~4.6083
 # We'll use 4.6083 as the standard conversion factor
-MESGHAL_TO_GRAM = 4.6083
+MESGHAL_TO_GRAM = 4.3318492
 
 
 def mesghal_to_gram(mesghal_price: int | None) -> int | None:
